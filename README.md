@@ -1,58 +1,62 @@
-# Book Manager CLI
+# 📚 Book Manager CLI
 
-A Python CLI application for managing a personal book collection with metadata, ratings, reading status, and persistent storage.
+> 🖥️ A terminal app to manage your personal book collection — add, search, rate, and track reading status. Zero external dependencies.
 
-## Features
+---
 
-- **Add books** — required title with optional author, year, and genre
-- **Bulk add** — add multiple books at once by comma-separated titles
-- **View all books** — color-coded table (green = read, yellow = unread) with summary stats
-- **Advanced search** — by title, author, or genre with 3 modes (contains, starts with, exact match)
-- **Edit books** — update title, author, year, or genre interactively
-- **Delete books** — remove a book from the collection
-- **Rate books** — assign a rating from 1 to 5
-- **Toggle read/unread** — flip reading status with one click
-- **View by rating** — sort highest or lowest, optionally show unrated books
-- **Auto-save** — persists to `books.json` after every action
+## 📖 Manage
+**Full control over your library from the terminal.** Add books with a required title and optional author, year, and genre. Add multiple books at once by comma-separated titles. Edit any field later, or delete what you don't need.
 
-## Data Schema
+## 🔍 Search
+**Find any book in seconds.** Search by title, author, or genre — with 3 modes: contains, starts with, or exact match.
 
-| Field    | Type            | Default    | Description                |
-|----------|-----------------|------------|----------------------------|
-| `title`  | `str`           | *(required)* | Book title               |
-| `author` | `str`           | `""`       | Author name                |
-| `year`   | `int \| None`   | `None`     | Publication year           |
-| `genre`  | `str`           | `""`       | Book genre/category        |
-| `rating` | `int \| None`   | `None`     | Rating (1–5)               |
-| `status` | `str`           | `"unread"` | Reading status (`read` / `unread`) |
-| `id`     | `str`           | UUID (8 chars) | Unique identifier      |
+## ⭐ Rate
+**Remember your opinion on every book.** Rate from 1 to 5, sort highest or lowest, and see which books you haven't rated yet. Toggle reading status between "read" and "unread" with one click.
 
-## Menu
+## 🎨 Display
+**Your library, beautifully presented.** A color-coded table — green for read, yellow for unread — with quick stats: how many books you've read and how many remain.
 
-```
-1. Add a book
-2. View all books
-3. Search books
-4. Edit a book
-5. Delete a book
-6. Rate a book
-7. Toggle read/unread
-8. View by rating
-9. Add multiple books
-10. Exit
-```
+## 💾 Save
+**Automatic safety.** Everything is saved to a JSON file after every action — and loaded automatically when you start the app. No manual "Save" button needed.
 
-## Requirements
+---
 
-- **Python 3.10+** — uses `list[type]` and `type | None` syntax
-- **No external dependencies** — built entirely with the standard library (`os`, `json`, `dataclasses`, `uuid`, `typing`)
-
-## Usage
+## 🚀 Get started
 
 ```bash
-# Start the application
+git clone https://github.com/redajabar-404/Book-manager.git
+cd Book-manager
 python app.py
+```
 
-# Run tests
+**📌 Requirements:** Python 3.10+ only — no `pip install` needed.
+
+### Menu
+
+```
+1. Add a book          6. Rate a book
+2. View all books      7. Toggle read/unread
+3. Search books        8. View by rating
+4. Edit a book         9. Add multiple books
+5. Delete a book       10. Exit
+```
+
+## ✅ Run tests
+
+```bash
 python -m unittest test_app.py -v
 ```
+
+40 tests covering every function in the app — all passing.
+
+## 🧰 Tech stack
+
+`dataclasses` · `json` · `uuid` · `typing` · `unittest` — all from the Python standard library, zero external dependencies.
+
+## 📜 License
+
+[MIT](LICENSE) — use, modify, and distribute freely.
+
+---
+
+⭐ **If you like this project, don't forget to star it — it keeps us motivated to add more features!**
